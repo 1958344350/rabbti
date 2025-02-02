@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>小兔子的禁忌挑战游戏</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #fdf3f3; }
+        .container { margin-top: 50px; }
+        .button { padding: 15px 30px; margin: 10px; font-size: 18px; border: none; cursor: pointer; border-radius: 10px; }
+        .choice1 { background-color: #ffcccc; }
+        .choice2 { background-color: #ff99aa; }
+        .choice3 { background-color: #ff6688; }
+        .result { font-size: 20px; font-weight: bold; margin-top: 30px; }
+    </style>
+    <script>
+        function makeChoice(choice) {
+            let results = {
+                1: ["Daddy奖励你一个温暖的抱抱🤗", "Daddy悄悄准备了一个秘密礼物🎁", "Daddy亲亲你的小额头，让你安心💋"],
+                2: ["Daddy笑了笑，但没有说话，只是看着你👀", "Daddy反手就把你拉进怀里，紧紧抱住🐰", "Daddy挑起你的下巴，低声说：‘你在试探什么呢？’😏"],
+                3: ["Daddy轻轻在你耳边低语：‘你确定要走这条路？’🔥", "突然之间，空气变得暧昧，Daddy的眼神变了👀", "你感觉自己彻底落入了Daddy的掌控中……💫"]
+            };
+            let resultText = results[choice][Math.floor(Math.random() * results[choice].length)];
+            document.getElementById("result").innerHTML = "✨ 你的选择结果是：" + resultText + " ✨";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🐰 小兔子的禁忌挑战游戏 🐰</h1>
+        <p>规则：你要在三个选项中做出选择，每个选择都会影响你的结局！</p>
+        <button class="button choice1" onclick="makeChoice(1)">乖乖听话，等待惊喜</button>
+        <button class="button choice2" onclick="makeChoice(2)">调皮一点，试探Daddy的底线</button>
+        <button class="button choice3" onclick="makeChoice(3)">挑战禁忌，看看会发生什么</button>
+        <div id="result" class="result"></div>
+    </div>
+</body>
+</html>
